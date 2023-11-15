@@ -16,21 +16,17 @@ namespace Carfleet{
         {
             get
             {
-                throw new NotImplementedException();
+                return _isCarryingGoods;
             }
             set
             {
-                throw new NotImplementedException();
+                _isCarryingGoods=value;
             }
         }
 
         public override string ToString()
         {
-<<<<<<< HEAD
-            return _registration.ToString() + " - " + _brand.ToString() + " - " + _model.ToString() + " - " + _chassisNumber.ToString();
-=======
-            throw new NotImplementedException();
->>>>>>> 3805f8d1eb02f3f03f5de4e0568cee4dfb734356
+            return Registration.ToString() + " - " + Brand.ToString() + " - " + Model.ToString() + " - " + ChassisNumber.ToString() + " - " + IsCarryingGoods.ToString().ToLower();
         }
         #endregion public methods
     }

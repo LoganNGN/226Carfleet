@@ -69,7 +69,7 @@ namespace Carfleet{
 
         public override string ToString()
         {
-            //TODO
+            return _registration.ToString() + " - " + _brand.ToString() + " - " + _model.ToString() + " - " + _chassisNumber.ToString();
         }
         #endregion public methods
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Carfleet{
     public class Car
@@ -69,7 +70,7 @@ namespace Carfleet{
 
         public override string ToString()
         {
-            //TODO
+            return _registration.ToString() +" - " + _brand.ToString() + " - " + _model.ToString() + " - " + _chassisNumber.ToString();
         }
         #endregion public methods
     }

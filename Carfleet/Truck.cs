@@ -27,7 +27,7 @@ namespace Carfleet{
             }
             set
             {
-                _registration= value;
+                _registration = value;
             }
         }
 
@@ -39,7 +39,7 @@ namespace Carfleet{
             }
             set
             {
-                _brand= value;
+                _brand = value;
             }
         }
 
@@ -51,7 +51,7 @@ namespace Carfleet{
             }
             set
             {
-                _model= value;
+                _model = value;
             }
         }
 
@@ -63,7 +63,7 @@ namespace Carfleet{
             }
             set
             {
-                _chassisNumber= value;
+                _chassisNumber = value;
             }
         }
         #endregion public methods

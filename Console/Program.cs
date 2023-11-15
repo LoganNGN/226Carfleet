@@ -4,13 +4,14 @@
     {
         static void Main(string[] args)
         {
-            Car car = new Car("VD 1111","Dacia", "logan", "2131321");
-            Truck truck = new Truck("VD 2222", "volvo", "XXX", "123456789");
+            Vehicle car = new Vehicle("VD 123 567", "Mercedes-Benz", "Vito", "SV30-0169266");
+            Truck truck = new Truck("VD 123 567", "Volvo", "FH16", "VOL45-0157966");
+
             DisplayCar(car);
             DisplayTruck(truck);
         }
 
-        static private void DisplayCar(Car car)
+        static private void DisplayCar(Vehicle car)
         {
             Console.WriteLine(car.ToString());
             

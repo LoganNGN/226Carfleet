@@ -26,6 +26,10 @@ namespace Carfleet{
 
         public override string ToString()
         {
+            if (IsCarryingGoods == true) 
+            {
+                return Registration.ToString() + " - " + Brand.ToString() + " - " + Model.ToString() + " - " + ChassisNumber.ToString();
+            }
             return Registration.ToString() + " - " + Brand.ToString() + " - " + Model.ToString() + " - " + ChassisNumber.ToString() + " - " + IsCarryingGoods.ToString().ToLower();
         }
         #endregion public methods

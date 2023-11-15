@@ -4,17 +4,21 @@
     {
         static void Main(string[] args)
         {
-            //TODO
+            Car car = new Car("VD 1111","Dacia", "logan", "2131321");
+            Truck truck = new Truck("VD 2222", "volvo", "XXX", "123456789");
+            DisplayCar(car);
+            DisplayTruck(truck);
         }
 
         static private void DisplayCar(Car car)
         {
-            //TODO
+            Console.WriteLine(car.ToString());
+            
         }
 
         static private void DisplayTruck(Truck truck)
         {
-            //TODO
+            Console.WriteLine(truck.ToString());
         }
     }
 }

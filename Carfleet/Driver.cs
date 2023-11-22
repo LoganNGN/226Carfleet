@@ -1,21 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Carfleet
 {
-    internal class Driver
+    public class Driver:Person
     {
-        #region private attributes
-        private string workZone;
-        #endregion private attributes
-
-        #region public methods
-        public Driver(string name, string firstname, string phonenumber, string emailaddress, string language = "", string workZone = "")
+        private string _workZone;
+        
+        public Driver(string name, string firstname, string phonenumber, string emailaddress, string workZone, List<string> languages):base(name,firstname, phonenumber, emailaddress, languages)
         {
+            _workZone = workZone;
         }
-        #endregion public methods
+        public string WorkZone
+        {
+            get
+            {
+                return _workZone;
+            }
+            set
+            {
+                _workZone = value;
+            }
+        }
     }
 }

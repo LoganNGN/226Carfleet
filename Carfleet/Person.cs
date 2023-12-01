@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO.Pipes;
+using System.Runtime.CompilerServices;
 using System.Threading;
 
 namespace Carfleet
@@ -77,8 +78,26 @@ namespace Carfleet
             }
             set 
             { 
-                _languages = value;
+               foreach(string languageToAdd  in value)
+                {
+                    if (!DoesExist(languageToAdd))
+                    {
+                        _languages.Add(languageToAdd);
+                    }
+                }
             }
+        }
+
+        private bool DoesExist(string languagesToVerifie)
+        {
+            foreach (string existingLanguages in _languages)
+            {
+                if(existingLanguages == languagesToVerifie)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         #endregion public methods
     }

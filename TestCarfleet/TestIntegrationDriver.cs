@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using static Carfleet.Driver;
 
 namespace Carfleet
 {
@@ -30,7 +31,7 @@ namespace Carfleet
         }
 
         [Test]
-        public void TakeAVehicle_NominalCase_VehicleAvailableForTheDriver()
+        public void TakeAVehicle_AssignFristVehicle_VehicleAvailableForTheDriver()
         {
             //given
 
@@ -38,7 +39,45 @@ namespace Carfleet
             _driver.TakeAVehicle(_vehicle);
 
             //then
-            Assert.AreEqual(_vehicle.Registration, _driver.Vehicle.ChassisNumber);
+            Assert.AreEqual(_vehicle.Registration, _driver.Vehicle.Registration);
+        }
+
+        [Test]
+        public void TakeAVehicle_VehicleAlreadyAssigned_ThrowException()
+        {
+            //given
+            _driver.TakeAVehicle(_vehicle);
+
+            //when
+            Assert.Throws<VehicleAlreadyAssignedException>(() => _driver.TakeAVehicle(_vehicle));
+
+            //then
+            //throws exception
+        }
+
+        [Test]
+        public void ReleaseAVehicle_ReleaseVehicle_ReleaseSuccessful()
+        {
+            //given
+            _driver.TakeAVehicle(_vehicle);
+
+            //when
+            _driver.ReleaseAVehicle();
+
+            //then
+            Assert.IsNull(_driver.Vehicle);
+        }
+
+        [Test]
+        public void ReleaseAVehicle_NoVehicleAssigned_ThrowException()
+        {
+            //given
+
+            //when
+            Assert.Throws<NoVehicleAssignedException>(() => _driver.ReleaseAVehicle());
+
+            //then
+            //throws exception
         }
     }
 }

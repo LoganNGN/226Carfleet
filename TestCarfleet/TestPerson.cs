@@ -40,7 +40,7 @@ namespace Carfleet
         {
             //given
             string expectedLanguage = "French";
-            List<string> expectedLanguages = new List<string>() { expectedLanguage };
+            List<string> expectedLanguages = new List<string>() {expectedLanguage };
 
             //when
             _person.Languages = expectedLanguages;
@@ -60,10 +60,10 @@ namespace Carfleet
 
             //then
             Assert.AreEqual(expectedLanguages.Count, _person.Languages.Count);
-            foreach (string expectedLanguage in expectedLanguages)
+            foreach(string expectedLanguage in expectedLanguages)
             {
                 bool languageExists = false;
-                if (_person.Languages.Contains(expectedLanguage))
+                if(_person.Languages.Contains(expectedLanguage))
                 {
                     languageExists = true;
                 }
@@ -76,7 +76,7 @@ namespace Carfleet
         {
             //given
             List<string> initialLanguages = new List<string>() { "French", "Spanish", "German" };
-            List<string> additionnalLanguages = new List<string>() { "Vietnamese" };
+            List<string> additionnalLanguages = new List<string>() { "Vietnamese"};
             List<string> expectedLanguages = new List<string>();
             expectedLanguages.AddRange(initialLanguages);
             expectedLanguages.AddRange(additionnalLanguages);
@@ -104,7 +104,7 @@ namespace Carfleet
         {
             //given
             List<string> initialLanguages = new List<string>() { "French", "Spanish", "German" };
-            List<string> additionnalLanguages = new List<string>() { "Vietnamese", "French" };
+            List<string> additionnalLanguages = new List<string>() { "Vietnamese" , "French" };
             List<string> expectedLanguages = new List<string>();
             expectedLanguages.AddRange(initialLanguages);
             expectedLanguages.Add("Vietnamese");
